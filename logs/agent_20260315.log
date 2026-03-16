@@ -1,0 +1,221 @@
+2026-03-15 13:08:22,026 - agent - ERROR -#(filename)s:35-[listdir_with_allowed_type]data不是文件夹
+2026-03-15 13:08:22,027 - agent - ERROR -#(filename)s:11-[md5计算]文件txt不存在
+2026-03-15 13:08:22,027 - agent - ERROR -#(filename)s:88-[加载知识库]txt加载失败:Error loading txt
+Traceback (most recent call last):
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 70, in load_document
+    documents:list[Document]=get_file_documents(path)
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 51, in get_file_documents
+    return txt_loader(read_path)
+  File "D:\Gitproject\Agentproject\utils\file_handler.py", line 48, in txt_loader
+    return TextLoader(filepath).load()
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading txt
+2026-03-15 13:08:22,029 - agent - ERROR -#(filename)s:11-[md5计算]文件pdf不存在
+2026-03-15 13:08:22,029 - agent - ERROR -#(filename)s:88-[加载知识库]pdf加载失败:File path pdf is not a valid file or url
+Traceback (most recent call last):
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 70, in load_document
+    documents:list[Document]=get_file_documents(path)
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 54, in get_file_documents
+    return pdf_loader(read_path)
+  File "D:\Gitproject\Agentproject\utils\file_handler.py", line 44, in pdf_loader
+    return PyPDFLoader(filepath,passwd).load()
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\pdf.py", line 281, in __init__
+    super().__init__(file_path, headers=headers)
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\pdf.py", line 140, in __init__
+    raise ValueError("File path %s is not a valid file or url" % self.file_path)
+ValueError: File path pdf is not a valid file or url
+2026-03-15 13:09:59,212 - agent - INFO -#(filename)s:86-[加载知识库]D:\Gitproject\Agentproject\data\扫地机器人100问.pdf内容加载成功
+2026-03-15 13:09:59,213 - agent - ERROR -#(filename)s:88-[加载知识库]D:\Gitproject\Agentproject\data\扫地机器人100问2.txt加载失败:Error loading D:\Gitproject\Agentproject\data\扫地机器人100问2.txt
+Traceback (most recent call last):
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 70, in load_document
+    documents:list[Document]=get_file_documents(path)
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 51, in get_file_documents
+    return txt_loader(read_path)
+  File "D:\Gitproject\Agentproject\utils\file_handler.py", line 48, in txt_loader
+    return TextLoader(filepath).load()
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading D:\Gitproject\Agentproject\data\扫地机器人100问2.txt
+2026-03-15 13:09:59,215 - agent - ERROR -#(filename)s:88-[加载知识库]D:\Gitproject\Agentproject\data\扫拖一体机器人100问.txt加载失败:Error loading D:\Gitproject\Agentproject\data\扫拖一体机器人100问.txt
+Traceback (most recent call last):
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 70, in load_document
+    documents:list[Document]=get_file_documents(path)
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 51, in get_file_documents
+    return txt_loader(read_path)
+  File "D:\Gitproject\Agentproject\utils\file_handler.py", line 48, in txt_loader
+    return TextLoader(filepath).load()
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading D:\Gitproject\Agentproject\data\扫拖一体机器人100问.txt
+2026-03-15 13:09:59,217 - agent - ERROR -#(filename)s:88-[加载知识库]D:\Gitproject\Agentproject\data\故障排除.txt加载失败:Error loading D:\Gitproject\Agentproject\data\故障排除.txt
+Traceback (most recent call last):
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 70, in load_document
+    documents:list[Document]=get_file_documents(path)
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 51, in get_file_documents
+    return txt_loader(read_path)
+  File "D:\Gitproject\Agentproject\utils\file_handler.py", line 48, in txt_loader
+    return TextLoader(filepath).load()
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading D:\Gitproject\Agentproject\data\故障排除.txt
+2026-03-15 13:09:59,220 - agent - ERROR -#(filename)s:88-[加载知识库]D:\Gitproject\Agentproject\data\维护保养.txt加载失败:Error loading D:\Gitproject\Agentproject\data\维护保养.txt
+Traceback (most recent call last):
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 70, in load_document
+    documents:list[Document]=get_file_documents(path)
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 51, in get_file_documents
+    return txt_loader(read_path)
+  File "D:\Gitproject\Agentproject\utils\file_handler.py", line 48, in txt_loader
+    return TextLoader(filepath).load()
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading D:\Gitproject\Agentproject\data\维护保养.txt
+2026-03-15 13:09:59,221 - agent - ERROR -#(filename)s:88-[加载知识库]D:\Gitproject\Agentproject\data\选购指南.txt加载失败:Error loading D:\Gitproject\Agentproject\data\选购指南.txt
+Traceback (most recent call last):
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 70, in load_document
+    documents:list[Document]=get_file_documents(path)
+  File "D:\Gitproject\Agentproject\rag\vector_store.py", line 51, in get_file_documents
+    return txt_loader(read_path)
+  File "D:\Gitproject\Agentproject\utils\file_handler.py", line 48, in txt_loader
+    return TextLoader(filepath).load()
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "D:\Anaconda_envs\envs\ragenv\lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading D:\Gitproject\Agentproject\data\选购指南.txt
+2026-03-15 13:11:48,311 - agent - INFO -#(filename)s:66-[加载知识库]D:\Gitproject\Agentproject\data\扫地机器人100问.pdf内容已存在知识库内,跳过
+2026-03-15 13:11:55,041 - agent - INFO -#(filename)s:86-[加载知识库]D:\Gitproject\Agentproject\data\扫地机器人100问2.txt内容加载成功
+2026-03-15 13:12:00,680 - agent - INFO -#(filename)s:86-[加载知识库]D:\Gitproject\Agentproject\data\扫拖一体机器人100问.txt内容加载成功
+2026-03-15 13:12:13,918 - agent - INFO -#(filename)s:86-[加载知识库]D:\Gitproject\Agentproject\data\故障排除.txt内容加载成功
+2026-03-15 13:12:24,148 - agent - INFO -#(filename)s:86-[加载知识库]D:\Gitproject\Agentproject\data\维护保养.txt内容加载成功
+2026-03-15 13:12:31,342 - agent - INFO -#(filename)s:86-[加载知识库]D:\Gitproject\Agentproject\data\选购指南.txt内容加载成功
+2026-03-15 22:57:53,430 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有1条消息。
+2026-03-15 22:57:53,430 - agent - DEBUG -#(filename)s:42-[log_before_model]HumanMessage | 给我生成我的使用报告
+2026-03-15 22:57:59,694 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：fill_context_for_report
+2026-03-15 22:57:59,694 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{}
+2026-03-15 22:57:59,694 - agent - INFO -#(filename)s:24-[tool monitor]工具fill_context_for_report调用成功
+2026-03-15 22:57:59,695 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有3条消息。
+2026-03-15 22:57:59,695 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | fill_context_for_report已调用
+2026-03-15 22:58:01,930 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：get_user_id
+2026-03-15 22:58:01,930 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{}
+2026-03-15 22:58:01,930 - agent - INFO -#(filename)s:24-[tool monitor]工具get_user_id调用成功
+2026-03-15 22:58:01,931 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有5条消息。
+2026-03-15 22:58:01,931 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 1007
+2026-03-15 22:58:04,017 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：get_current_month
+2026-03-15 22:58:04,017 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{}
+2026-03-15 22:58:04,017 - agent - INFO -#(filename)s:24-[tool monitor]工具get_current_month调用成功
+2026-03-15 22:58:04,018 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有7条消息。
+2026-03-15 22:58:04,018 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 2025-08
+2026-03-15 22:58:05,889 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：fetch_external_data
+2026-03-15 22:58:05,889 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{'user_id': '1007', 'month': '2025-08'}
+2026-03-15 22:58:05,891 - agent - INFO -#(filename)s:24-[tool monitor]工具fetch_external_data调用成功
+2026-03-15 22:58:05,891 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有9条消息。
+2026-03-15 22:58:05,891 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | {"特征": "55㎡一居 | 独居 | 复合地板", "效率": "覆盖率:88%\\n日均清扫:33㎡\\n沿边清扫漏扫增多", "耗材": "滤网寿命:剩余70天\\n尘盒清理:每3天", "对比": "清洁效率优于65%小户型用户"}
+2026-03-15 22:58:07,379 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：rag_summarize
+2026-03-15 22:58:07,379 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{'query': '复合地板清洁保养建议'}
+2026-03-15 22:58:12,519 - agent - INFO -#(filename)s:24-[tool monitor]工具rag_summarize调用成功
+2026-03-15 22:58:12,520 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有11条消息。
+2026-03-15 22:58:12,520 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 复合地板清洁保养建议：日常使用干拖把或微湿拖把清洁，避免大量积水；禁止使用强酸、强碱或腐蚀性清洁剂；定期打蜡可保持光泽；避免尖锐物品划伤表面；注意防潮防晒，防止地板变形或褪色。
+2026-03-15 22:58:21,112 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：rag_summarize
+2026-03-15 22:58:21,112 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{'query': '扫地机器人沿边清扫漏扫问题解决方案'}
+2026-03-15 22:58:24,902 - agent - INFO -#(filename)s:24-[tool monitor]工具rag_summarize调用成功
+2026-03-15 22:58:24,902 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有13条消息。
+2026-03-15 22:58:24,902 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 针对扫地机器人沿边清扫漏扫问题，解决方案包括优化边刷设计以增强边缘垃圾聚拢能力，调整传感器布局提升墙边识别精度，并通过算法改进使机器人更贴合边缘行进，减少清扫盲区。
+2026-03-15 23:07:12,032 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有1条消息。
+2026-03-15 23:07:12,032 - agent - DEBUG -#(filename)s:42-[log_before_model]HumanMessage | 在我当前所在的位置下,机器人如何保养
+2026-03-15 23:07:17,159 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：get_user_location
+2026-03-15 23:07:17,160 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{}
+2026-03-15 23:07:17,160 - agent - INFO -#(filename)s:24-[tool monitor]工具get_user_location调用成功
+2026-03-15 23:07:17,194 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有3条消息。
+2026-03-15 23:07:17,194 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 杭州
+2026-03-15 23:07:23,481 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：get_weather
+2026-03-15 23:07:23,482 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{'city': '杭州'}
+2026-03-15 23:07:23,483 - agent - INFO -#(filename)s:24-[tool monitor]工具get_weather调用成功
+2026-03-15 23:07:24,015 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有5条消息。
+2026-03-15 23:07:24,015 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 城市杭州天气为晴天,气温为26摄氏度,空气湿度50%,南风1级,AQI21,最近6小时降雨概率极低
+2026-03-15 23:07:30,133 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：rag_summarize
+2026-03-15 23:07:30,134 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{'query': '扫地机器人在温和气候（湿度50%左右，晴天）下的保养方法'}
+2026-03-15 23:07:32,753 - agent - INFO -#(filename)s:24-[tool monitor]工具rag_summarize调用成功
+2026-03-15 23:07:33,542 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有7条消息。
+2026-03-15 23:07:33,542 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 在温和气候（湿度约50%、晴天）下，扫地机器人应定期清理尘盒和滤网，检查并清除滚刷及边刷缠绕的毛发杂物，保持传感器清洁，并确保充电座周围干燥通风。
+2026-03-15 23:08:04,030 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有1条消息。
+2026-03-15 23:08:04,030 - agent - DEBUG -#(filename)s:42-[log_before_model]HumanMessage | 帮我生成我的使用报告
+2026-03-15 23:08:13,892 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：get_user_id
+2026-03-15 23:08:13,893 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{}
+2026-03-15 23:08:13,893 - agent - INFO -#(filename)s:24-[tool monitor]工具get_user_id调用成功
+2026-03-15 23:08:13,949 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有3条消息。
+2026-03-15 23:08:13,949 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 1010
+2026-03-15 23:08:18,106 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：get_current_month
+2026-03-15 23:08:18,107 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{}
+2026-03-15 23:08:18,107 - agent - INFO -#(filename)s:24-[tool monitor]工具get_current_month调用成功
+2026-03-15 23:08:18,195 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有5条消息。
+2026-03-15 23:08:18,195 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 2025-11
+2026-03-15 23:08:20,988 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：fill_context_for_report
+2026-03-15 23:08:20,989 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{}
+2026-03-15 23:08:20,989 - agent - INFO -#(filename)s:24-[tool monitor]工具fill_context_for_report调用成功
+2026-03-15 23:08:21,287 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有7条消息。
+2026-03-15 23:08:21,287 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | fill_context_for_report已调用
+2026-03-15 23:08:23,798 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：fetch_external_data
+2026-03-15 23:08:23,799 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{'user_id': '1010', 'month': '2025-11'}
+2026-03-15 23:08:23,800 - agent - INFO -#(filename)s:24-[tool monitor]工具fetch_external_data调用成功
+2026-03-15 23:08:25,227 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有9条消息。
+2026-03-15 23:08:25,227 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | {"特征": "130㎡四居 | 三代同堂 | 通体砖", "效率": "覆盖率:87%\\n手动辅助清扫:1次/天\\n定时清扫使用率:75%", "耗材": "电池衰减:20%\\n边刷寿命:剩余20天", "对比": "大户型中操作便捷性与同类持平"}
+2026-03-15 23:08:28,070 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：rag_summarize
+2026-03-15 23:08:28,071 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{'query': '扫地机器人电池保养和边刷更换建议'}
+2026-03-15 23:08:35,959 - agent - INFO -#(filename)s:24-[tool monitor]工具rag_summarize调用成功
+2026-03-15 23:08:37,090 - agent - INFO -#(filename)s:40-[log_before_model]即将调用模型，带有11条消息。
+2026-03-15 23:08:37,090 - agent - DEBUG -#(filename)s:42-[log_before_model]ToolMessage | 电池保养建议：避免长时间满电或完全放电存放，建议电量保持在40%-60%；长期不用时每月充电一次以防电池老化。边刷更换建议：当边刷出现明显磨损、变形或清扫效果下降时应及时更换，一般每6-12个月更换一次。
+2026-03-15 23:08:38,394 - agent - INFO -#(filename)s:19-[tool monitor]执行工具：rag_summarize
+2026-03-15 23:08:38,394 - agent - INFO -#(filename)s:20-[tool monitor]传入参数：{'query': '大户型扫地机器人使用优化建议'}
