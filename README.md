@@ -1,5 +1,4 @@
 主要依赖包
-包名	用途
 streamlit	前端 Web 框架
 langchain	Agent / Chain / Tool 框架
 langchain-core	LangChain 核心抽象
