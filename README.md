@@ -76,14 +76,13 @@ langchain-text-splitters: 1.1.1
 
 
 ## 快速开始
-- 环境要求默认
-
-- 阿里云百炼模型API密钥（或其他大模型API）
+- 阿里云百炼模型API密钥
 
 ---
 
 ## 运行步骤
 
+系统用户变量配置DASHSCOPE_API_KEY  和OPENAI_API_KEY  
 
 相关依赖版本
 === LangChain 相关包版本信息 ===
@@ -126,7 +125,6 @@ cmd命令行进入conda环境 运行下行命令行
 - 系统通过YAML文件进行配置管理：
 
 > config/agent.yml - 智能体相关配置
-
 
 
 > config/chroma.yml - 向量数据库配置
